@@ -39,6 +39,9 @@ Default Job:
       - variable:
           not-equals:
             asd: asd
+      - variable:
+          not-equals:
+            asd: asaasd
       description: asd
   artifact-subscriptions: []
 repositories: []
