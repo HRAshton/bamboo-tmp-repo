@@ -1,0 +1,61 @@
+version: 2
+plan:
+  project-key: AA
+  key: AAB
+  name: AB
+  enabled: true
+  rerunnable: true
+stages:
+- Default Stage:
+    manual: false
+    final: false
+    jobs:
+    - Default Job
+Default Job:
+  key: JOB1
+  tasks:
+  - any-task:
+      plugin-key: com.atlassian.bamboo.plugins.ant:task.builder.ant
+      configuration:
+        buildFile: asd
+        environmentVariables: asd
+        testResultsDirectory: '**/test-reports/*.xml'
+        buildJdk: JDK
+        label: a
+        testChecked: 'true'
+        target: clean test
+        workingSubDirectory: asd
+      conditions:
+      - variable:
+          exists: asd
+      description: asd
+  - script:
+      interpreter: SHELL
+      file: asd
+      argument: asd
+      environment: asd
+      working-dir: ads
+      conditions:
+      - variable:
+          not-equals:
+            asd: asd
+      description: asd
+  artifact-subscriptions: []
+repositories: []
+# Remove line above if want to set repository with YAML file as primary repository of plan
+triggers: []
+branches:
+  create: manually
+  delete: never
+  link-to-jira: true
+notifications: []
+labels: []
+dependencies:
+  require-all-stages-passing: false
+  enabled-for-branches: true
+  block-strategy: none
+  plans: []
+other:
+  concurrent-build-plugin:
+    number-of-concurrent-builds: system-default
+    execution-strategy: block-triggering
