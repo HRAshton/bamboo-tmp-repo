@@ -15,7 +15,7 @@ Default Job:
   key: JOB1
   tasks:
   - any-task:
-      description: true
+      description: 123
       plugin-key: com.atlassian.bamboo.plugins.bamboo-docker-plugin:task.docker.cli
       configuration:
         commandOption: build
